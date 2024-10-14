@@ -12,15 +12,26 @@ public class Program
         // ...
         // ...
         // DisplayDayOfWeek(0); // This should output: "Thursday"
-        CheckForPositiveNegativeZero(3);
-        FindMinimum(3,-1,7);
-        FindMaximum(3,10,100);
-        IsDivisibleBy5(10);
-        IsDivisibleBy5(11);
-        CheckEvenOrOdd(11);
-        CheckEvenOrOdd(10);
-        CheckVowelOrConsonant('a');
-        DisplayDayOfWeek(5);
+        CheckForPositiveNegativeZero(-1);
+        CheckForPositiveNegativeZero(1);
+        CheckForPositiveNegativeZero(0);
+        FindMinimum(1,2,3);
+        FindMinimum(2,1,3);
+        FindMinimum(3,2,1);
+        FindMaximum(1,2,3);
+        FindMaximum(2,1,3);
+        FindMaximum(3,2,1);
+        IsDivisibleBy5(5);
+        IsDivisibleBy5(6);
+        CheckEvenOrOdd(2);
+        CheckEvenOrOdd(3);
+        CheckVowelOrConsonant('e');
+        CheckVowelOrConsonant('E');
+        CheckVowelOrConsonant('s');
+        CheckVowelOrConsonant('S');
+        DisplayDayOfWeek(0);
+        DisplayDayOfWeek(3);
+        DisplayDayOfWeek(6);
     }
     
     public static void FahrenheitToCelsius(double fahrenheit)
@@ -73,10 +84,11 @@ public class Program
         }
     }
     public static void CheckVowelOrConsonant(char letter){
+        char lowerCaseLetter = Char.ToLower(letter);
         char[] vowels = {'a','e','i','o','u'};
         Boolean isVowel = false;
         for(int i =0; i<vowels.Length;i++){
-            if(letter == vowels[i]){
+            if(lowerCaseLetter == vowels[i]){
                 isVowel=true;
                 break;
             }
