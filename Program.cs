@@ -12,9 +12,17 @@ public class Program
         // ...
         // ...
         // DisplayDayOfWeek(0); // This should output: "Thursday"
-
+        CheckForPositiveNegativeZero(3);
+        FindMinimum(3,-1,7);
+        FindMaximum(3,10,100);
+        IsDivisibleBy5(10);
+        IsDivisibleBy5(11);
+        CheckEvenOrOdd(11);
+        CheckEvenOrOdd(10);
+        CheckVowelOrConsonant('a');
+        DisplayDayOfWeek(5);
     }
-
+    
     public static void FahrenheitToCelsius(double fahrenheit)
     {
         double celsiusDegree = (fahrenheit - 32) * 5/9; 
@@ -22,5 +30,86 @@ public class Program
     }
 
     // Define your functions below:
-
+    public static void CheckForPositiveNegativeZero(int number) 
+    {
+        if (number>0) {
+            Console.WriteLine("Your number is positive.");
+        } else if (number<0){
+            Console.WriteLine("Your number is negative.");
+        } else {
+            Console.WriteLine("Your number is zero.");
+        }
+    }
+    public static void FindMinimum(int num1, int num2, int num3) {
+        if(num1 < num2 & num1 < num3){
+            Console.WriteLine("The minimum number is "+num1);
+        } else if (num2 < num1 & num2 < num3){
+            Console.WriteLine("The minimum number is "+num2);
+        } else {
+            Console.WriteLine("The minimum number is "+num3);
+        }
+    }
+    public static void FindMaximum(int num1, int num2, int num3){
+        if(num1 > num2 & num1 > num3){
+            Console.WriteLine("The maximum number is "+num1);
+        } else if (num2 > num1 & num2 > num3){
+            Console.WriteLine("The maximum number is "+num2);
+        } else {
+            Console.WriteLine("The maximum number is "+num3);
+        }
+    }
+    public static void IsDivisibleBy5(int number) {
+        if (number%5==0){
+            Console.WriteLine(number+" is divsible by 5.");
+        } else {
+            Console.WriteLine(number+" is not divsible by 5.");
+        }
+    }
+    public static void CheckEvenOrOdd(int number) {
+        if(number%2==0){
+            Console.WriteLine(number+" is an even number.");
+        } else {
+            Console.WriteLine(number+" is an odd number.");
+        }
+    }
+    public static void CheckVowelOrConsonant(char letter){
+        char[] vowels = {'a','e','i','o','u'};
+        Boolean isVowel = false;
+        for(int i =0; i<vowels.Length;i++){
+            if(letter == vowels[i]){
+                isVowel=true;
+                break;
+            }
+        }
+        if(isVowel==true){
+            Console.WriteLine(letter+" is a vowel.");
+        } else {
+            Console.WriteLine(letter+" is a consonant.");
+        }
+    }
+    public static void DisplayDayOfWeek(int dayCode){
+        switch (dayCode){
+            case 0:
+            Console.WriteLine("Sunday");
+            break;
+            case 1:
+            Console.WriteLine("Monday");
+            break;
+            case 2:
+            Console.WriteLine("Tuesday");
+            break;
+            case 3:
+            Console.WriteLine("Wednesday");
+            break;
+            case 4:
+            Console.WriteLine("Thursday");
+            break;
+            case 5:
+            Console.WriteLine("Friday");
+            break;
+            case 6:
+            Console.WriteLine("Saturday");
+            break;
+        }
+    }
 }
